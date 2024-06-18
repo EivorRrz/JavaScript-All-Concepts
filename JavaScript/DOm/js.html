@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>DOM Sibling Example</title>
+</head>
+<body>
+  <div id="first">First Element</div>
+  <div id="second">Second Element</div>
+  <div id="third">Third Element</div>
+
+  <script>
+    
+    // Get the first element
+    var firstElement = document.getElementById('first');
+
+    // Get the next sibling node
+    var nextSiblingNode = firstElement.nextSibling;
+    console.log(nextSiblingNode); // Might output a text node (whitespace)
+
+    // Get the next sibling element
+    var nextElementSibling = firstElement.nextElementSibling;
+    console.log(nextElementSibling); // Outputs the second element
+
+    // Get the previous sibling element
+    var thirdElement = document.getElementById('third');
+    var previousElementSibling = thirdElement.previousElementSibling;
+    console.log(previousElementSibling); // Outputs the second element
+  </script>
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Add Sibling Example</title>
+</head>
+<body>
+  <div id="first">First Element</div> 
+  <div id="second">Second Element</div>
+
+  <script>
+    var secondElement = document.getElementById('second');
+
+    // Create a new element
+    var newElement = document.createElement('div');
+    newElement.textContent= 'New Element';
+
+    // Insert the new element before the second element
+    secondElement.parentNode.insertBefore(newElement, secondElement);
+
+    // Now, the new element is a sibling between the first and second elements
+    console.log(newElement.previousElementSibling.textContent); // Outputs: First Element
+    console.log(newElement.nextElementSibling.textContent); // Outputs: Second Element
+  </script>
+</body>
+</html>

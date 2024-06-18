@@ -1,0 +1,1 @@
+console.log(newElement.nextElementSibling.textContent); // Outputs: Second Element
